@@ -1,0 +1,139 @@
+{
+  "info": {
+    "_postman_id": "1f52916e-960a-4d54-a1e2-49ed0b601db4",
+    "name": "CRM",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "firstName",
+              "value": "Aurélien",
+              "type": "text"
+            },
+            {
+              "key": "lastName",
+              "value": "Digout",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "aurelien.digout@gmail.com",
+              "type": "text"
+            },
+            {
+              "key": "phone",
+              "value": "5147465792",
+              "type": "text"
+            },
+            {
+              "key": "company",
+              "value": "ADS",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:4000/contact",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["contact"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read Contacts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/contact",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["contact"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get contact by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/contact/:contactId",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["contact", ":contactId"],
+          "variable": [
+            {
+              "key": "contactId",
+              "value": "5d34f10ce9a75a00be08f37b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete contact",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/contact/:contactId",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["contact", ":contactId"],
+          "variable": [
+            {
+              "key": "contactId",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update contact",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/contact/:contactId",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["contact", ":contactId"],
+          "variable": [
+            {
+              "key": "contactId",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
