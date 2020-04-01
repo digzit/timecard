@@ -4,8 +4,8 @@ const TimesheetSchema: Schema = new Schema({
   user_id: String,
   user_name: String,
   duration: String,
-  start_date: String,
-  end_date: String,
+  start_date: Date,
+  end_date: Date,
 });
 
 export interface ITimesheetModel extends Document {
@@ -13,8 +13,8 @@ export interface ITimesheetModel extends Document {
   user_id: string;
   user_name: string;
   duration: string;
-  start_date: string;
-  end_date: string;
+  start_date: Date;
+  end_date: Date;
 }
 
 export const Timesheet: Model<ITimesheetModel> = model('Timesheet', TimesheetSchema);

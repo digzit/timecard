@@ -19,6 +19,7 @@
     "express": "^4.17.1",
     "express-form-data": "^2.0.12",
     "fs": "^0.0.1-security",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "momentjs": "^2.0.0",
     "mongodb": "^3.5.5",

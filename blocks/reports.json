@@ -17,36 +17,27 @@
         "type": "button",
         "text": {
           "type": "plain_text",
-          "text": "1 Day"
+          "text": "Yesterday"
         },
         "value": "1d"
+      },
+      {
+        "action_id": "report_1t",
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "Today"
+        },
+        "value": "today"
       },
       {
         "action_id": "report_1w",
         "type": "button",
         "text": {
           "type": "plain_text",
-          "text": "1 Week"
+          "text": "This week"
         },
         "value": "1w"
-      },
-      {
-        "action_id": "report_2w",
-        "type": "button",
-        "text": {
-          "type": "plain_text",
-          "text": "2 Weeks"
-        },
-        "value": "2w"
-      },
-      {
-        "action_id": "report_1m",
-        "type": "button",
-        "text": {
-          "type": "plain_text",
-          "text": "1 Month"
-        },
-        "value": "1m"
       }
     ]
   }
