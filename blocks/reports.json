@@ -1,0 +1,53 @@
+[
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": ":spiral_calendar_pad:  Select a period to see your timesheets"
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "actions",
+    "elements": [
+      {
+        "action_id": "report_1d",
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "1 Day"
+        },
+        "value": "1d"
+      },
+      {
+        "action_id": "report_1w",
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "1 Week"
+        },
+        "value": "1w"
+      },
+      {
+        "action_id": "report_2w",
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "2 Weeks"
+        },
+        "value": "2w"
+      },
+      {
+        "action_id": "report_1m",
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "1 Month"
+        },
+        "value": "1m"
+      }
+    ]
+  }
+]

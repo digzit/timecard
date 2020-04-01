@@ -1,1 +1,1 @@
-export { default as AudioController } from './audio';
+export { default as TimeController } from './time';

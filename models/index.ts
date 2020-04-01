@@ -1,1 +1,1 @@
-export { default as AudioSchema } from './audio';
+export { default as TimeSchema } from './time';
