@@ -5,10 +5,7 @@ const TimeSchema: Schema = new Schema({
   user_id: String,
   user_name: String,
   type: String,
-  created_date: {
-    type: Date,
-    default: moment().format(),
-  },
+  created_date: Date,
 });
 
 export interface ITimeModel extends Document {

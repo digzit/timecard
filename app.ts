@@ -49,7 +49,7 @@ class Application {
   }
 
   private listner() {
-    this.app.command('/check', async ({ command, ack, say, respond }) => {
+    this.app.command('/check', async ({ command, ack, say, respond, body }) => {
       ack();
       try {
         switch (command.text) {
@@ -94,25 +94,25 @@ class Application {
         const res = action as any;
         this.TimeController.exportTimesheets(res.value, user.id).then((timesheets) => {
           const blocks: any = [];
-          let countPeriod = moment('00:00:00', 'H:mm:ss');
+          let countPeriod = moment('00:00:00', 'h:mm:ss');
           const arrayDates = Object.keys(timesheets);
           arrayDates.map((date) => {
+            let text = `*${moment(date, 'DD/MM/YYYY').calendar().split(' at')[0]}*\n\n`;
+            timesheets[date].map((timesheet) => {
+              countPeriod.add(moment.duration(timesheet.duration));
+              text += `${moment(timesheet.start_date).format('h:mm a')} *TO* ${moment(
+                timesheet.end_date
+              ).format('h:mm a')}\n${moment
+                .duration(timesheet.duration)
+                .hours()} hour(s) and ${moment
+                .duration(timesheet.duration)
+                .minutes()} minute(s)\n\n`;
+            });
             const newBlock = {
               type: 'section',
               text: {
                 type: 'mrkdwn',
-                text: `*${moment(date, 'DD/MM/YYYY').calendar().split(' at')[0]}* \n\n ${timesheets[
-                  date
-                ].map((timesheet) => {
-                  countPeriod.add(moment.duration(timesheet.duration));
-                  return `${moment(timesheet.start_date).format('h:mm a')} *TO* ${moment(
-                    timesheet.end_date
-                  ).format('h:mm a')} \n ${moment
-                    .duration(timesheet.duration)
-                    .hours()} hour(s) and ${moment
-                    .duration(timesheet.duration)
-                    .minutes()} minute(s) \n\n`;
-                })}`.replace(',', ''),
+                text,
               },
             };
             blocks.push(newBlock);

@@ -14,6 +14,7 @@ export default class AudioController {
         user_id: command.user_id,
         user_name: command.user_name,
         type: command.text,
+        created_date: moment().format(),
       });
       newTime.save((err, time) => {
         if (err) {
