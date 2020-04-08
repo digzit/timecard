@@ -94,7 +94,7 @@ class Application {
         const res = action as any;
         this.TimeController.exportTimesheets(res.value, user.id).then((timesheets) => {
           const blocks: any = [];
-          let countPeriod = moment('00:00:00', 'h:mm:ss');
+          let countPeriod = moment.duration('00:00:00');
           const arrayDates = Object.keys(timesheets);
           arrayDates.map((date) => {
             let text = `*${moment(date, 'DD/MM/YYYY').calendar().split(' at')[0]}*\n\n`;
@@ -124,7 +124,7 @@ class Application {
               type: 'mrkdwn',
               text: `:clipboard: Your times for *${
                 res.text.text
-              }*: ${countPeriod.hours()} hour(s) and ${countPeriod.minutes()} minute(s)`,
+              }*: ${countPeriod.asHours()} hour(s)`,
             },
           });
           respond({ text: 'Exports', blocks });
